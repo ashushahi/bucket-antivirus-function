@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'pip3 --version'
+        sh 'ls -a'
         sh 'python --version'
         sh 'python -m venv venv'
         sh './venv/bin/active'
