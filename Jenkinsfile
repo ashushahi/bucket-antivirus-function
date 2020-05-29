@@ -5,6 +5,8 @@ pipeline {
       steps {
         sh 'pip3 --version'
         sh 'python --version'
+        sh 'python -m venv venv'
+        sh '. ./venv/bin/active'
         sh 'pip3 install -r requirements-dev.txt'
       }
     }
