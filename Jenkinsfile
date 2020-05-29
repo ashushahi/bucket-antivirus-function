@@ -5,8 +5,12 @@ pipeline {
       steps {
         sh 'pip3 --version'
         sh 'python --version'
+        sh 'apk update'
+        sh 'apk upgrade'
+        sh 'apk add bash'
+        sh 'where bash'
         sh 'python -m venv venv'
-        bash 'source venv/bin/activate'
+        sh 'source venv/bin/activate'
         sh 'pip3 install -r requirements-dev.txt'
       }
     }
