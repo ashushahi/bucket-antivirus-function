@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'pip3 --version'
-        sh 'pip3 install -r requirements-dev.txt'
+        sh 'pip3 install --${workspace} -r requirements-dev.txt'
       }
     }
     stage('unit-test') {
