@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        sh 'sudo chmod -R 777 /.local'
         sh 'pip3 --version'
         sh 'pip3 install -r requirements-dev.txt'
       }
