@@ -4,10 +4,9 @@ pipeline {
     stage('build') {
       steps {
         sh 'pip3 --version'
-        sh 'ls -a'
         sh 'python --version'
         sh 'python -m venv venv'
-        sh './venv/bin/active'
+        sh 'cat ./venv/bin/active'
         sh 'pip3 install -r requirements-dev.txt'
       }
     }
