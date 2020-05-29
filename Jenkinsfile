@@ -4,7 +4,8 @@ pipeline {
     stage('build') {
       steps {
         sh 'pip3 --version'
-        sh 'pip3 install --/var/lib/jenkins/workspace/anti-virus-lambda-pipeline -r requirements-dev.txt'
+        sh 'python --version'
+        sh 'pip3 install -r requirements-dev.txt'
       }
     }
     stage('unit-test') {
