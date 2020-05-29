@@ -9,12 +9,22 @@ pipeline {
     stage('unit-test') {
       steps {
         sh 'nosetests ./tests/unit/ --with-xunit'
-      }   
+      }
+      post {
+        always {
+          junit 'nosetests.xml'
+        }
+      } 
     }
     stage('integration-test') {
       steps {
         sh 'nosetests ./tests/integration/integration_test.py --tc=awsregion:eu-west-1 --tc=configbucket:emn-dev-config --tc=propertyfile:emn-antivirus-service-integration.properties --with-xunit'
-      }   
+      }
+      post {
+        always {
+          junit 'nosetests.xml'
+        }
+      }
     }
   }
 }
