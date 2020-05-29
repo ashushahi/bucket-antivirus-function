@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh 'nosetests'
       }
+      
       post {
         always {
           junit 'nosetests.xml'
