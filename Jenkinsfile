@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip install -r requirements-dev.txt --$User'
+        sh 'pip install -r requirements-dev.txt --jenkins'
       }
     }
     stage('unit-test') {
