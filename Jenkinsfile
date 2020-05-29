@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip install -r requirements-dev.txt --jenkins'
+        sh 'pyhton --version'
+        sh 'pip3 --version'
+        sh 'pip3 install -r requirements-dev.txt'
       }
     }
     stage('unit-test') {
