@@ -6,7 +6,7 @@ pipeline {
         sh 'whereis python3.7'
         sh 'python3.7 -m venv venv'
         sh '. ./venv/bin/activate'
-        sh 'whereis python3.7'
+        sh 'pip3 show'
         sh "pip3 install -r requirements-dev.txt"
         sh 'nosetests'
       }
