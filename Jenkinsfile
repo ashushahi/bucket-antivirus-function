@@ -3,23 +3,10 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip3 --version'
-        sh 'python --version'
-        sh 'python -m venv venv'
-        sh '. ./venv/bin/activate'
-        sh 'ls -a'
-        sh 'mkdir -p .cache'
-        sh 'mkdir -p .cache/pip/'
-        sh 'mkdir -p .local/'
-        sh 'chmod 777 -R .cache/pip/'
-        sh 'chmod 777 -R .local/'
-        sh 'ls -a'
-        sh 'pip3 install boto3'
-        sh 'pip3 install coverage'
-        sh 'pip3 install mock'
-        sh 'pip3 install nose'
-        sh 'pip3 install nose-testconfig'
-        sh 'pip3 install requests'
+    withEnv(["HOME=${env.WORKSPACE}"]) {
+      sh "pip install -r requirements-dev.txt --user"
+      # python stuff
+    }
       }
     }
     stage('unit-test') {
