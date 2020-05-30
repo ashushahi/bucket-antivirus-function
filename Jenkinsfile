@@ -1,7 +1,11 @@
 pipeline {
   agent { docker { image 'python:3.7.7' } }
   stages {
-
+    tage('build') {
+      steps {
+        sh 'whereis python3.7'
+      }
+    }
     stage('unit-test') {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
@@ -17,11 +21,7 @@ pipeline {
       } 
     }
     
-    tage('build') {
-      steps {
-        sh 'whereis python3.7'
-      }
-    }
+
     
     stage('integration-test') {
       steps {
