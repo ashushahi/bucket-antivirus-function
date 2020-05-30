@@ -9,7 +9,7 @@ pipeline {
         sh '. ./venv/bin/activate'
         sh 'ls -a'
         sh 'mkdir .local'
-        sh 'chmod 777 -r .local'
+        sh 'chmod -R 777 .local'
         sh 'ls -a'
         sh 'pip3 install -r requirements-dev.txt'
       }
