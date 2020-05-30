@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'whereis python3.7'
-        sh 'python 3.7 -m venv venv'
+        sh 'python3.7 -m venv venv'
         sh '. ./venv/bin/activate'
         sh 'whereis python3.7'
         withEnv(["HOME=${env.WORKSPACE}"]) {
