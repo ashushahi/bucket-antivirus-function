@@ -1,7 +1,7 @@
 pipeline {
   agent { docker { image 'python:3.7.7' } }
   stages {
-    tage('build') {
+    stage('build') {
       steps {
         sh 'whereis python3.7'
       }
@@ -20,9 +20,6 @@ pipeline {
         }
       } 
     }
-    
-
-    
     stage('integration-test') {
       steps {
         sh 'nosetests'
