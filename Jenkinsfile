@@ -7,7 +7,7 @@ pipeline {
         sh 'python --version'
         sh 'python -m venv venv'
         sh 'ls -a venv/bin/'
-        sh 'pip3 install --no-cache-dir -r requirements-dev.txt'
+        sh 'sudo pip3 install --user -r requirements-dev.txt'
       }
     }
     stage('unit-test') {
