@@ -1,21 +1,11 @@
 pipeline {
   agent { docker { image 'python:3.7.7' } }
   stages {
-    stage('build') {
-      steps {
-        sh 'whereis python3.7'
-        sh 'python3.7 -m venv venv'
-        sh '. ./venv/bin/activate'
-        sh 'pip3 show'
-        sh "pip3 install -r requirements-dev.txt"
-        sh 'nosetests'
-      }
-    }
     stage('unit-test') {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
           sh "pip install -r requirements-dev.txt --user"
-          sh './.local/bin/nosetests'
+          sh './.local/bin/nosetests --with-xunit'
         }
       }
       
@@ -24,6 +14,11 @@ pipeline {
           junit 'nosetests.xml'
         }
       } 
+    }
+    stage('build') {
+      steps {
+        
+      }
     }
     stage('integration-test') {
       steps {
