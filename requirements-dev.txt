@@ -8,3 +8,4 @@ nose
 nose-testconfig
 requests
 pytz
+datadog
