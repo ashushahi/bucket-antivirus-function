@@ -9,6 +9,7 @@ pipeline {
         sh '. ./venv/bin/activate'
         sh 'mkdir .cache'
         sh 'mkdir .cache/pip/'
+        sh 'chmod 777 -R .cache/pip/'
         sh 'pip3 install boto3'
         sh 'pip3 install coverage'
         sh 'pip3 install mock'
