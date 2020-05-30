@@ -7,8 +7,6 @@ pipeline {
         sh 'python --version'
         sh 'python -m venv venv'
         sh '. ./venv/bin/activate'
-        sh 'mkdir .local'
-        sh 'chmod -R 777 .local'
         sh 'ls -a'
         sh 'pip3 install -r requirements-dev.txt'
       }
