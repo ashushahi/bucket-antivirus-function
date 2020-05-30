@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'python:3.8-slim-buster' } }
+  agent { docker { image 'python:3.7.7' } }
   stages {
     stage('build') {
       steps {
@@ -7,7 +7,7 @@ pipeline {
         sh 'python --version'
         sh 'python -m venv venv'
         sh 'ls -a venv/bin/'
-        sh 'pip3 install -r requirements-dev.txt'
+        sh 'pip3 install --no-cache-dir -r requirements-dev.txt'
       }
     }
     stage('unit-test') {
