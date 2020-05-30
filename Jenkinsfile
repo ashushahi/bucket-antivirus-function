@@ -12,7 +12,7 @@ pipeline {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
           sh "pip install -r requirements-dev.txt --user"
-          sh 'nosetests'
+          sh '${env.WORKSPACE}/.local/bin/nosetests'
         }
       }
       
