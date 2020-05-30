@@ -8,7 +8,7 @@ pipeline {
         sh 'python -m venv venv'
         sh '. ./venv/bin/activate'
         sh 'ls -a'
-        sh 'rm -R .local'
+        sh 'rm -fR .local'
         sh 'ls -a'
         sh 'mkdir .local'
         sh 'chmod -r 777 .local'
