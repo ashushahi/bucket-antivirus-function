@@ -7,6 +7,7 @@ pipeline {
         sh 'python --version'
         sh 'python -m venv venv'
         sh '. ./venv/bin/activate'
+        sh 'mkdir .cache'
         sh 'mkdir .cache/pip/'
         sh 'pip3 install boto3'
         sh 'pip3 install coverage'
