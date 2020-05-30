@@ -11,7 +11,7 @@ pipeline {
         sh 'rm -fR .local'
         sh 'ls -a'
         sh 'mkdir .local'
-        sh 'chmod -r 777 .local'
+        sh 'chmod 777 -r .local'
         sh 'ls -a'
         sh 'pip3 install -r requirements-dev.txt'
       }
