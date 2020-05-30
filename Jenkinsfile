@@ -10,7 +10,7 @@ pipeline {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
           sh "pip install -r requirements-dev.txt --user"
-          sh './.local/bin/nosetests'
+          sh './.local/bin/nosetests --with-xunit'
         }
       }
       
