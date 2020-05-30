@@ -7,7 +7,7 @@ pipeline {
         sh 'python --version'
         sh 'python -m venv venv'
         sh '. ./venv/bin/activate'
-        sh 'pip3 install --user -r requirements-dev.txt'
+        sh 'pip3 install -r requirements-dev.txt'
       }
     }
     stage('unit-test') {
