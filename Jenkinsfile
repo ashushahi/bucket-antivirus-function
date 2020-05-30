@@ -7,7 +7,7 @@ pipeline {
         sh 'python --version'
         sh 'python -m venv venv'
         sh '. ./venv/bin/activate'
-        sh 'python -m pip boto3'
+        sh 'python -m pip install boto3'
         sh 'pip3 install coverage'
         sh 'pip3 install mock'
         sh 'pip3 install nose'
